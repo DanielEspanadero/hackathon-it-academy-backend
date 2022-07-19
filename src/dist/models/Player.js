@@ -3,10 +3,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Player = void 0;
 const mongoose_1 = require("mongoose");
 const PlayerSchema = new mongoose_1.Schema({
-    name: {
+    firstName: {
+        type: String,
+        required: [true, 'First name is required']
+    },
+    lastName: {
+        type: String,
+        required: [true, 'Last name is required']
+    },
+    email: {
         type: String,
         unique: true,
-        required: [true, 'Name is required']
+        required: [true, 'Last name is required']
     },
     date: String,
     totalGames: {
