@@ -13,24 +13,33 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const config_1 = require("../db/config");
+const config_1 = __importDefault(require("../config"));
+const config_2 = require("../db/config");
+// Import of routes
+const auth_routes_1 = __importDefault(require("../routes/auth.routes"));
 const error404_routes_1 = __importDefault(require("../routes/error404.routes"));
 class Server {
     constructor() {
         this.path = {
-            error404: '/*'
+            error404: '/*',
+            auth: '/auth'
         };
         this.app = (0, express_1.default)();
-        this.port = process.env.PORT;
+        this.port = config_1.default.port;
         this.dbConnect();
+        this.middlewares();
         this.routes();
     }
     dbConnect() {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, config_1.connectDB)();
+            yield (0, config_2.connectDB)();
         });
     }
+    middlewares() {
+        this.app.use(express_1.default.json());
+    }
     routes() {
+        this.app.use(this.path.auth, auth_routes_1.default);
         this.app.use(this.path.error404, error404_routes_1.default);
     }
     listen() {

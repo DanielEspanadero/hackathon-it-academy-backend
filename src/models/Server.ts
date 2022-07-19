@@ -1,22 +1,27 @@
 import express, { Application } from 'express';
+import config from '../config';
 
 import { connectDB } from '../db/config';
 
+// Import of routes
+import routerAuth from '../routes/auth.routes';
 import routerError404 from '../routes/error404.routes';
 
 class Server {
 
     private app: Application;
-    private port: string;
+    private port: number;
     private path = {
-        error404: '/*'
+        error404: '/*',
+        auth: '/auth'
     }
 
     constructor() {
         this.app = express();
-        this.port = process.env.PORT as string;
+        this.port = config.port;
 
         this.dbConnect();
+        this.middlewares();
         this.routes();
     }
 
@@ -24,7 +29,12 @@ class Server {
         await connectDB();
     }
 
+    middlewares(){
+        this.app.use(express.json());
+    }
+
     routes() {
+        this.app.use(this.path.auth, routerAuth);
         this.app.use(this.path.error404, routerError404);
     }
 

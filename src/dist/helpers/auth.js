@@ -8,21 +8,31 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.connectDB = void 0;
-const mongoose_1 = require("mongoose");
-const config_1 = __importDefault(require("../config"));
-const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        yield (0, mongoose_1.connect)(config_1.default.databaseURL);
-        console.log('Database connected successfully 🙂');
-    }
-    catch (error) {
-        console.log('Failed to connect database ❌');
+const Player_1 = require("../models/Player");
+class Auth {
+    constructor(firstName, lastName, email, password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
     }
     ;
-});
-exports.connectDB = connectDB;
+    register() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const player = yield new Player_1.Player({
+                firstName: this.firstName,
+                lastName: this.lastName,
+                email: this.email,
+                password: this.password
+            });
+            const savePlayer = yield player.save();
+            console.log(savePlayer);
+        });
+    }
+    ;
+    login() {
+    }
+}
+;
+exports.default = Auth;

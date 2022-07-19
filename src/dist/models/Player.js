@@ -14,7 +14,11 @@ const PlayerSchema = new mongoose_1.Schema({
     email: {
         type: String,
         unique: true,
-        required: [true, 'Last name is required']
+        required: [true, 'Email is required']
+    },
+    password: {
+        type: String,
+        required: [true, 'Password is required']
     },
     date: String,
     totalGames: {

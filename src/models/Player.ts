@@ -1,15 +1,5 @@
 import { Schema, model } from "mongoose";
-
-export interface IPlayer {
-    firstName: string,
-    lastName: string,
-    email: string,
-    date: string,
-    totalGames: number,
-    gamesWon: number,
-    wonRate: number,
-    playHistory: object
-}
+import { IPlayer } from "../interfaces/IPlayer";
 
 const PlayerSchema = new Schema({
     firstName: {
@@ -23,7 +13,11 @@ const PlayerSchema = new Schema({
     email: {
         type: String,
         unique: true,
-        required: [true, 'Last name is required']
+        required: [true, 'Email is required']
+    },
+    password: {
+        type: String,
+        required: [true, 'Password is required']
     },
     date: String,
     totalGames: {
@@ -44,5 +38,7 @@ const PlayerSchema = new Schema({
         versionKey: false
     }
 );
+
+
 
 export const Player = model<IPlayer>('Player', PlayerSchema);
