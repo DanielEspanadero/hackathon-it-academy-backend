@@ -11,7 +11,7 @@ S'han de proveir rutes per a les operacions següents:
 - crear un model
 - fer un update d'un model segons el vostre identificador
 - esborrar un model
-- En cas que s'intenti consultar una ruta inexistent s'ha de contestar amb un codi de resposta 404.
+- En cas que s'intenti consultar una ruta inexistent s'ha de contestar amb un codi de resposta 404. ✅
 
 - Les rutes per fer les operacions de cada model han d'estar separades, no hi ha d'haver una ruta general per obtenir tots els models, crear un model o actualitzar.
 
