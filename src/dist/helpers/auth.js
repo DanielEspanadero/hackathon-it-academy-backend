@@ -8,8 +8,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const Player_1 = require("../models/Player");
+const jsonwebtoken_1 = require("jsonwebtoken");
+const config_1 = __importDefault(require("../config"));
 class Auth {
     constructor(email, password, firstName, lastName, date) {
         this.firstName = firstName;
@@ -29,6 +34,10 @@ class Auth {
                 password: yield Player_1.Player.encryptPassword(this.password)
             });
             const savePlayer = yield player.save();
+            const jwt = (0, jsonwebtoken_1.sign)({ id: player.id }, config_1.default.jwtSecret, {
+                expiresIn: '4h'
+            });
+            return jwt;
         });
     }
     ;
@@ -45,6 +54,10 @@ class Auth {
                 return 'Wrong password';
             }
             ;
+            const jwt = (0, jsonwebtoken_1.sign)({ id: playerDB.id }, config_1.default.jwtSecret, {
+                expiresIn: '4h'
+            });
+            return jwt;
         });
     }
     ;

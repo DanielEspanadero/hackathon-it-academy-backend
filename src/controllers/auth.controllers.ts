@@ -6,12 +6,13 @@ export const register = async (req: Request, res: Response) => {
         const { firstName, lastName, email, password } = req.body;
         const date = new Date();
         const player = new Auth(email, password, firstName, lastName, date);
-        player.register();
+        const register = await player.register();
         res.status(201).json({
             firstName,
             lastName,
             email,
-            date
+            date,
+            jwt: register
         });
     } catch (error) {
         console.log(error);
@@ -41,7 +42,8 @@ export const login = async (req: Request, res: Response) => {
         };
 
         res.status(201).json({
-            msg: 'Successful authentication 🥳🎉🎊'
+            msg: 'Successful authentication 🥳🎉🎊',
+            jwt: login
         })
 
     } catch (error) {

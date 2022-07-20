@@ -1,4 +1,7 @@
 import { Player } from "../models/Player";
+import { sign } from 'jsonwebtoken';
+
+import config from "../config";
 
 class Auth {
 
@@ -27,6 +30,12 @@ class Auth {
         });
 
         const savePlayer = await player.save();
+
+        const jwt = sign({ id: player.id }, config.jwtSecret as string, {
+            expiresIn: '4h'
+        });
+
+        return jwt;
     };
 
     async login() {
@@ -43,6 +52,12 @@ class Auth {
         if (!validPassword) {
             return 'Wrong password';
         };
+
+        const jwt = sign({id: playerDB.id}, config.jwtSecret as string, {
+            expiresIn: '4h'
+        });
+
+        return jwt;
     };
 };
 

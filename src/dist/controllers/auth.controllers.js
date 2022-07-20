@@ -19,12 +19,13 @@ const register = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const { firstName, lastName, email, password } = req.body;
         const date = new Date();
         const player = new auth_1.default(email, password, firstName, lastName, date);
-        player.register();
+        const register = yield player.register();
         res.status(201).json({
             firstName,
             lastName,
             email,
-            date
+            date,
+            jwt: register
         });
     }
     catch (error) {
@@ -54,7 +55,8 @@ const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         }
         ;
         res.status(201).json({
-            msg: 'Successful authentication 🥳🎉🎊'
+            msg: 'Successful authentication 🥳🎉🎊',
+            jwt: login
         });
     }
     catch (error) {
