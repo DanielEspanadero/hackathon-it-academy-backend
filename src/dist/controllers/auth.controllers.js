@@ -18,7 +18,7 @@ const register = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { firstName, lastName, email, password } = req.body;
         const date = new Date();
-        const player = new auth_1.default(firstName, lastName, email, date, password);
+        const player = new auth_1.default(email, password, firstName, lastName, date);
         player.register();
         res.status(201).json({
             firstName,
@@ -36,6 +36,33 @@ const register = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     ;
 });
 exports.register = register;
-const login = () => {
-};
+const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { email, password } = req.body;
+        const player = new auth_1.default(email, password);
+        const login = yield player.login(email, password);
+        if (login === 'Wrong email') {
+            return res.status(400).json({
+                msg: 'The email address entered is not registered 😑'
+            });
+        }
+        ;
+        if (login === 'Wrong password') {
+            return res.status(400).json({
+                msg: 'Incorrect password 😑'
+            });
+        }
+        ;
+        res.status(201).json({
+            msg: 'Successful authentication 🥳🎉🎊'
+        });
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500).json({
+            msg: 'Error 500 - Internal Server Error'
+        });
+    }
+    ;
+});
 exports.login = login;

@@ -1,15 +1,14 @@
 import { Player } from "../models/Player";
-import bcryptjs from 'bcryptjs';
 
 class Auth {
 
-    private firstName: string;
-    private lastName: string;
+    private firstName: string | undefined;
+    private lastName: string | undefined;
     private email: string;
-    private date: Date;
+    private date: Date | undefined;
     private password: string;
 
-    constructor(firstName: string, lastName: string, email: string, date: Date, password: string) {
+    constructor(email: string, password: string, firstName?: string, lastName?: string, date?: Date) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -19,23 +18,32 @@ class Auth {
 
     async register() {
 
-        const salt = bcryptjs.genSaltSync(10);
-
         const player = await new Player({
             firstName: this.firstName,
             lastName: this.lastName,
             email: this.email,
             date: this.date,
-            password: bcryptjs.hashSync(this.password, salt)
+            password: await Player.encryptPassword(this.password)
         });
 
-        const savePlayer = await player.save();        
+        const savePlayer = await player.save();
     };
 
-    login(){
+    async login(email: string, password: string) {
 
-    }
+        // Check if the player exists with the email
+        const playerDB = await Player.findOne({ email: this.email });
 
+        if (!playerDB) {
+            return 'Wrong email';
+        };
+
+        const validPassword = await Player.comparePassword(this.password, playerDB.password);
+
+        if (!validPassword) {
+            return 'Wrong password';
+        };
+    };
 };
 
 export default Auth;

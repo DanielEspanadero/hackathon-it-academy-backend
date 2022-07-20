@@ -8,14 +8,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const Player_1 = require("../models/Player");
-const bcryptjs_1 = __importDefault(require("bcryptjs"));
 class Auth {
-    constructor(firstName, lastName, email, date, password) {
+    constructor(email, password, firstName, lastName, date) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -25,20 +21,33 @@ class Auth {
     ;
     register() {
         return __awaiter(this, void 0, void 0, function* () {
-            const salt = bcryptjs_1.default.genSaltSync(10);
             const player = yield new Player_1.Player({
                 firstName: this.firstName,
                 lastName: this.lastName,
                 email: this.email,
                 date: this.date,
-                password: bcryptjs_1.default.hashSync(this.password, salt)
+                password: yield Player_1.Player.encryptPassword(this.password)
             });
             const savePlayer = yield player.save();
         });
     }
     ;
-    login() {
+    login(email, password) {
+        return __awaiter(this, void 0, void 0, function* () {
+            // Check if the player exists with the email
+            const playerDB = yield Player_1.Player.findOne({ email: this.email });
+            if (!playerDB) {
+                return 'Wrong email';
+            }
+            ;
+            const validPassword = yield Player_1.Player.comparePassword(this.password, playerDB.password);
+            if (!validPassword) {
+                return 'Wrong password';
+            }
+            ;
+        });
     }
+    ;
 }
 ;
 exports.default = Auth;
