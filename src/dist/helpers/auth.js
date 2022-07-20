@@ -32,7 +32,7 @@ class Auth {
         });
     }
     ;
-    login(email, password) {
+    login() {
         return __awaiter(this, void 0, void 0, function* () {
             // Check if the player exists with the email
             const playerDB = yield Player_1.Player.findOne({ email: this.email });

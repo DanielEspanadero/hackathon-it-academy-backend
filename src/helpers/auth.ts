@@ -29,7 +29,7 @@ class Auth {
         const savePlayer = await player.save();
     };
 
-    async login(email: string, password: string) {
+    async login() {
 
         // Check if the player exists with the email
         const playerDB = await Player.findOne({ email: this.email });

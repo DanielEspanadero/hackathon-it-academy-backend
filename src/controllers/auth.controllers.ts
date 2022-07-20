@@ -26,7 +26,7 @@ export const login = async (req: Request, res: Response) => {
         const { email, password } = req.body;
         const player = new Auth(email, password);
 
-        const login = await player.login(email, password);
+        const login = await player.login();
 
         if (login === 'Wrong email') {
             return res.status(400).json({

@@ -40,7 +40,7 @@ const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { email, password } = req.body;
         const player = new auth_1.default(email, password);
-        const login = yield player.login(email, password);
+        const login = yield player.login();
         if (login === 'Wrong email') {
             return res.status(400).json({
                 msg: 'The email address entered is not registered 😑'
