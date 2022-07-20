@@ -58,7 +58,35 @@ class RollGame {
         });
     }
     ;
-    getWorstPlayer() {
+    static getWorstPlayer() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const players = yield Player_1.Player.find({});
+            let min = 100;
+            players.forEach(player => player.wonRate < min ? min = player.wonRate : null);
+            const worstPlayer = yield Player_1.Player.findOne({ wonRate: min });
+            return worstPlayer;
+        });
+    }
+    ;
+    deleteGames() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const player = yield Player_1.Player.findById({ _id: this.id });
+            player.totalGames = 0;
+            player.gamesWon = 0;
+            player.wonRate = 0;
+            player.playHistory = [];
+            yield player.save();
+            return {
+                id: player._id,
+                firstName: player.firstName,
+                lastName: player.lastName,
+                email: player.email,
+                totalGames: player.totalGames,
+                gamesWon: player.gamesWon,
+                wonRate: player.wonRate,
+                playHistory: player.playHistory
+            };
+        });
     }
     ;
 }

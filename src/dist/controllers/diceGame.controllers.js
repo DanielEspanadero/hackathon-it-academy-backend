@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getBetterPlayer = exports.generalRanking = exports.playerRollDices = void 0;
+exports.deleteGames = exports.getWorstPlayer = exports.getBetterPlayer = exports.generalRanking = exports.playerRollDices = void 0;
 const diceGame_1 = __importDefault(require("../helpers/diceGame"));
 const playerRollDices = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -46,8 +46,12 @@ const generalRanking = (req, res) => __awaiter(void 0, void 0, void 0, function*
     ;
 });
 exports.generalRanking = generalRanking;
-const getBetterPlayer = (req, res) => {
+const getBetterPlayer = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        const betterPlayer = yield diceGame_1.default.getBetterPlayer();
+        res.status(201).json({
+            betterPlayer
+        });
     }
     catch (error) {
         res.status(500).json({
@@ -55,5 +59,38 @@ const getBetterPlayer = (req, res) => {
         });
     }
     ;
-};
+});
 exports.getBetterPlayer = getBetterPlayer;
+const getWorstPlayer = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const worstPlayer = yield diceGame_1.default.getWorstPlayer();
+        res.status(201).json({
+            worstPlayer
+        });
+    }
+    catch (error) {
+        res.status(500).json({
+            msg: 'Error 500 - Internal Server Error.'
+        });
+    }
+    ;
+});
+exports.getWorstPlayer = getWorstPlayer;
+const deleteGames = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const id = req.params.id;
+        const player = yield new diceGame_1.default(id);
+        const deleteGames = yield player.deleteGames();
+        res.status(201).json({
+            msg: 'Player games deleted successfully.',
+            deleteGames
+        });
+    }
+    catch (error) {
+        res.status(400).json({
+            msg: 'The ID entered is not valid.'
+        });
+    }
+    ;
+});
+exports.deleteGames = deleteGames;

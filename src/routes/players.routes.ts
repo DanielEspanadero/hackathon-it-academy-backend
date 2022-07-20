@@ -1,4 +1,6 @@
 import { Router } from "express";
+
+import { validateToken } from "../middlewares/validateJWT";
 import { 
     getAllPlayers, 
     getOnePlayer, 
@@ -6,11 +8,13 @@ import {
     deletePlayer
  } from "../controllers/players.controllers";
 
+
+
 const router = Router();
 
-router.get('/get-all-players', getAllPlayers);
-router.get('/get-player/:id', getOnePlayer);
-router.put('/update-player/:id', updateName);
-router.delete('/delete-player/:id', deletePlayer);
+router.get('/get-all-players', validateToken, getAllPlayers);
+router.get('/get-player/:id', validateToken, getOnePlayer);
+router.put('/update-player/:id', validateToken, updateName);
+router.delete('/delete-player/:id', validateToken, deletePlayer);
 
 export default router;

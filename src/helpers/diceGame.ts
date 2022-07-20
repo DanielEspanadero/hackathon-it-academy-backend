@@ -40,7 +40,7 @@ class RollGame {
     };
 
     static async generalRanking() {
-        const players = await Player.find({}).sort({wonRate: -1});
+        const players = await Player.find({}).sort({ wonRate: -1 });
 
         return players;
     };
@@ -55,8 +55,35 @@ class RollGame {
         return betterPlayer;
     };
 
-    getWorstPlayer() {
+    static async getWorstPlayer() {
+        const players = await Player.find({});
+        let min = 100;
+        players.forEach(player =>
+            player.wonRate < min ? min = player.wonRate : null);
+        const worstPlayer = await Player.findOne({ wonRate: min });
 
+        return worstPlayer;
+    };
+
+    async deleteGames() {
+        const player = await Player.findById({_id: this.id}) as IPlayer;
+
+        player.totalGames = 0;
+        player.gamesWon = 0;
+        player.wonRate = 0;
+        player.playHistory = [];
+        await player.save();
+
+        return {
+            id: player._id,
+            firstName: player.firstName,
+            lastName: player.lastName,
+            email: player.email,
+            totalGames: player.totalGames,
+            gamesWon: player.gamesWon,
+            wonRate: player.wonRate,
+            playHistory: player.playHistory
+        };
     };
 };
 

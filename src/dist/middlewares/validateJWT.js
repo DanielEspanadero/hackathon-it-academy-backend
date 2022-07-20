@@ -10,7 +10,7 @@ const validateToken = (req, res, next) => {
     try {
         const accesToken = req.header('authorization') || req.query.accesstoken;
         if (!accesToken) {
-            res.status(400).json({ msg: 'Access denied' });
+            res.status(400).json({ msg: 'Access Denied, you need a token to access this route.' });
         }
         ;
         jsonwebtoken_1.default.verify(accesToken, config_1.default.jwtSecret);
