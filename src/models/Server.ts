@@ -5,6 +5,7 @@ import { connectDB } from '../db/connect';
 
 // Import of routes
 import routerAuth from '../routes/auth.routes';
+import routerPlayers from '../routes/players.routes';
 import routerError404 from '../routes/error404.routes';
 
 class Server {
@@ -13,7 +14,8 @@ class Server {
     private port: string;
     private path = {
         error404: '/*',
-        auth: '/auth'
+        auth: '/auth',
+        players: '/players'
     }
 
     constructor() {
@@ -35,6 +37,7 @@ class Server {
 
     routes() {
         this.app.use(this.path.auth, routerAuth);
+        this.app.use(this.path.players, routerPlayers);
         this.app.use(this.path.error404, routerError404);
     }
 
