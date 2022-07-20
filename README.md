@@ -8,7 +8,7 @@ S'han de proveir rutes per a les operacions següents:
 
 - obtenir tots els models d'una col·lecció
 - obtenir un model usant un identificador
-- crear un model
+- crear un model ✅
 - fer un update d'un model segons el vostre identificador
 - esborrar un model
 - En cas que s'intenti consultar una ruta inexistent s'ha de contestar amb un codi de resposta 404. ✅
