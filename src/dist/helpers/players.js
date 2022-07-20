@@ -10,9 +10,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Player_1 = require("../models/Player");
-class GetPlayers {
-    constructor(id) {
+class Players {
+    constructor(id, name) {
         this.id = id;
+        this.name = name;
     }
     ;
     static getAllPlayers() {
@@ -44,13 +45,13 @@ class GetPlayers {
         });
     }
     ;
-    getAndDelete() {
+    modifyPlayerName() {
         return __awaiter(this, void 0, void 0, function* () {
-            const deletePlayer = yield Player_1.Player.findOneAndRemove({ _id: this.id });
-            return deletePlayer;
+            const player = yield Player_1.Player.findById({ _id: this.id });
+            player === null || player === void 0 ? void 0 : player.name = this.name;
         });
     }
     ;
 }
 ;
-exports.default = GetPlayers;
+exports.default = Players;

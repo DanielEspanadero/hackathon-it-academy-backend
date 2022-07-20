@@ -8,6 +8,7 @@ export interface IPlayer {
     gamesWon: number,
     wonRate: number,
     playHistory: object,
+    update(): string,
     encryptPassword(): string,
     comparePassword(): boolean
 };

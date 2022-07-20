@@ -6,8 +6,8 @@
 
 S'han de proveir rutes per a les operacions següents:
 
-- obtenir tots els models d'una col·lecció
-- obtenir un model usant un identificador
+- obtenir tots els models d'una col·lecció ✅
+- obtenir un model usant un identificador ✅
 - crear un model ✅
 - fer un update d'un model segons el vostre identificador
 - esborrar un model

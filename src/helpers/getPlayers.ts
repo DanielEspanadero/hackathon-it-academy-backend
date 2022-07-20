@@ -2,7 +2,7 @@ import { Player } from "../models/Player";
 
 class GetPlayers {
 
-    private id: string
+    private id: string;
 
     constructor(id: string) {
         this.id = id;
@@ -25,10 +25,10 @@ class GetPlayers {
     };
 
     async getOnePlayer() {
-        const player = await Player.findById({_id: this.id});
+        const player = await Player.findById({ _id: this.id });
 
-        if(!player?._id) return false;
-        
+        if (!player?._id) return false;
+
 
         return {
             firstName: player?.firstName,
@@ -36,6 +36,13 @@ class GetPlayers {
             playHistory: player?.playHistory
         };
     };
+
+    async getAndDelete() {
+        const deletePlayer = await Player.findOneAndRemove({_id: this.id})
+
+        return deletePlayer;
+    };
+
 };
 
 export default GetPlayers;

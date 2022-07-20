@@ -12,8 +12,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getOnePlayer = exports.getAllPlayers = void 0;
+exports.deletePlayer = exports.updateName = exports.getOnePlayer = exports.getAllPlayers = void 0;
 const getPlayers_1 = __importDefault(require("../helpers/getPlayers"));
+const updatePlayerName_1 = __importDefault(require("../helpers/updatePlayerName"));
 // TODO Get all players ✅
 // TODO Get one player ✅
 // TODO Change player name
@@ -50,3 +51,36 @@ const getOnePlayer = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     ;
 });
 exports.getOnePlayer = getOnePlayer;
+const updateName = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const id = req.params.id;
+        const { firstName, lastName } = req.body;
+        const updatePlayerName = yield new updatePlayerName_1.default(id, firstName, lastName);
+        const playerUpdated = yield updatePlayerName.updateName();
+        res.status(201).json({
+            msg: 'Player updated',
+            playerUpdated
+        });
+    }
+    catch (error) {
+        res.status(500).json({
+            msg: 'Error 500 - Internal Server Error'
+        });
+    }
+    ;
+});
+exports.updateName = updateName;
+const deletePlayer = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const id = req.params.id;
+        const player = yield new getPlayers_1.default(id);
+        player.getAndDelete();
+        res.status(201).json({
+            msg: 'Player deleted',
+            player
+        });
+    }
+    catch (error) {
+    }
+});
+exports.deletePlayer = deletePlayer;

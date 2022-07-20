@@ -5,4 +5,6 @@ const players_controllers_1 = require("../controllers/players.controllers");
 const router = (0, express_1.Router)();
 router.get('/get-all-players', players_controllers_1.getAllPlayers);
 router.get('/get-player/:id', players_controllers_1.getOnePlayer);
+router.put('/update-player/:id', players_controllers_1.updateName);
+router.delete('/delete-player/:id', players_controllers_1.deletePlayer);
 exports.default = router;
