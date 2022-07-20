@@ -1,5 +1,7 @@
 # 🎲 JUEGO DE DADOS 🎲
 
+![Demo](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/dices.jpeg)
+
 _Este proyecto ha sido desarrollado desde cero por [Daniel Españadero](https://github.com/DanielEspanadero)._
 
 _Aplicación creada para la clasificación de la hackathon de [IT Academy](https://cibernarium.barcelonactiva.cat/it-academy/inscripcio;jsessionid=14F45E43AC8E410DB388C1096FD21201) - Backend organizada por [Nuwe](https://nuwe.io/)_
