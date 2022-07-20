@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "a49bf01e-13f7-4f2b-840b-b64216c05585",
+		"name": "Dice Game",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19175949"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Daniel\",\n    \"lastName\": \"Españadero\",\n    \"email\": \"d.espanadero@gmail.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"d.espanadero@gmail.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Players",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDg3NGI5ZDFiYjY2ZTc5YTllMjNkOSIsImlhdCI6MTY1ODM1NjUwNiwiZXhwIjoxNjU4MzcwOTA2fQ.FMPdxNpkawWBQbGnvt6KahibB3i3XE4oSDi2tYYY4QQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/players/get-all-players",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"players",
+						"get-all-players"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get One Player",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDg3NGI5ZDFiYjY2ZTc5YTllMjNkOSIsImlhdCI6MTY1ODM1NjUwNiwiZXhwIjoxNjU4MzcwOTA2fQ.FMPdxNpkawWBQbGnvt6KahibB3i3XE4oSDi2tYYY4QQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/players/get-player/62d7766414abde02df4769cb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"players",
+						"get-player",
+						"62d7766414abde02df4769cb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update First Name and Last Name",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDg3NGI5ZDFiYjY2ZTc5YTllMjNkOSIsImlhdCI6MTY1ODM1NjUwNiwiZXhwIjoxNjU4MzcwOTA2fQ.FMPdxNpkawWBQbGnvt6KahibB3i3XE4oSDi2tYYY4QQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Pepito\",\n    \"lastName\": \"Grillo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/players/update-player/62d7766414abde02df4769cb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"players",
+						"update-player",
+						"62d7766414abde02df4769cb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Player",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDg3NGI5ZDFiYjY2ZTc5YTllMjNkOSIsImlhdCI6MTY1ODM1NjUwNiwiZXhwIjoxNjU4MzcwOTA2fQ.FMPdxNpkawWBQbGnvt6KahibB3i3XE4oSDi2tYYY4QQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/players/delete-player/62d7766414abde02df4769cb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"players",
+						"delete-player",
+						"62d7766414abde02df4769cb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Player Roll Dices",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDg3NGI5ZDFiYjY2ZTc5YTllMjNkOSIsImlhdCI6MTY1ODM1NjE1OCwiZXhwIjoxNjU4MzcwNTU4fQ.ur22iTGHoMRVQEpF1_hbN93r1ib2qQGiN_SY5Zx3e8c",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/games/player/62d874b9d1bb66e79a9e23d9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"games",
+						"player",
+						"62d874b9d1bb66e79a9e23d9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "General Ranking",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDg3NGI5ZDFiYjY2ZTc5YTllMjNkOSIsImlhdCI6MTY1ODM1NjE1OCwiZXhwIjoxNjU4MzcwNTU4fQ.ur22iTGHoMRVQEpF1_hbN93r1ib2qQGiN_SY5Zx3e8c",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/games/ranking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"games",
+						"ranking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Better Player",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDg3NGI5ZDFiYjY2ZTc5YTllMjNkOSIsImlhdCI6MTY1ODM1NjUwNiwiZXhwIjoxNjU4MzcwOTA2fQ.FMPdxNpkawWBQbGnvt6KahibB3i3XE4oSDi2tYYY4QQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/games/better-player",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"games",
+						"better-player"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Worst Player",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDg3NGI5ZDFiYjY2ZTc5YTllMjNkOSIsImlhdCI6MTY1ODM1NjUwNiwiZXhwIjoxNjU4MzcwOTA2fQ.FMPdxNpkawWBQbGnvt6KahibB3i3XE4oSDi2tYYY4QQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/games/worst-player",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"games",
+						"worst-player"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Player",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDg3NGI5ZDFiYjY2ZTc5YTllMjNkOSIsImlhdCI6MTY1ODM1NjUwNiwiZXhwIjoxNjU4MzcwOTA2fQ.FMPdxNpkawWBQbGnvt6KahibB3i3XE4oSDi2tYYY4QQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/games/delete/62d874b9d1bb66e79a9e23d9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"games",
+						"delete",
+						"62d874b9d1bb66e79a9e23d9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
