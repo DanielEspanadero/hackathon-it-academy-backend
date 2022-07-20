@@ -4,17 +4,17 @@ import Auth from "../helpers/auth";
 export const register = async (req: Request, res: Response) => {    
     try {
         const { firstName, lastName, email, password } = req.body;
-
-        const player = new Auth(firstName, lastName, email, password);
-
+        const date = new Date();
+        const player = new Auth(firstName, lastName, email, date, password);
         player.register();
-
         res.status(201).json({
-            player
+            firstName,
+            lastName,
+            email,
+            date
         });
     } catch (error) {
         console.log(error);
-        
         res.status(500).json({
             msg: 'Error 500 - Internal Server Error'
         });    

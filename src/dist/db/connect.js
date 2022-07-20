@@ -12,30 +12,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.login = exports.register = void 0;
-const auth_1 = __importDefault(require("../helpers/auth"));
-const register = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.connectDB = void 0;
+const mongoose_1 = require("mongoose");
+const config_1 = __importDefault(require("../config"));
+const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { firstName, lastName, email, password } = req.body;
-        const date = new Date();
-        const player = new auth_1.default(firstName, lastName, email, date, password);
-        player.register();
-        res.status(201).json({
-            firstName,
-            lastName,
-            email,
-            date
-        });
+        yield (0, mongoose_1.connect)(config_1.default.databaseURL);
+        console.log('Database connected successfully 🙂');
     }
     catch (error) {
-        console.log(error);
-        res.status(500).json({
-            msg: 'Error 500 - Internal Server Error'
-        });
+        console.log('Failed to connect database ❌');
     }
     ;
 });
-exports.register = register;
-const login = () => {
-};
-exports.login = login;
+exports.connectDB = connectDB;

@@ -1,7 +1,7 @@
 import express, { Application } from 'express';
 import config from '../config';
 
-import { connectDB } from '../db/config';
+import { connectDB } from '../db/connect';
 
 // Import of routes
 import routerAuth from '../routes/auth.routes';
@@ -10,7 +10,7 @@ import routerError404 from '../routes/error404.routes';
 class Server {
 
     private app: Application;
-    private port: number;
+    private port: string;
     private path = {
         error404: '/*',
         auth: '/auth'
@@ -18,7 +18,7 @@ class Server {
 
     constructor() {
         this.app = express();
-        this.port = config.port;
+        this.port = config.port as string;
 
         this.dbConnect();
         this.middlewares();
