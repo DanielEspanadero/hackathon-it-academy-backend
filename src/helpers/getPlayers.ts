@@ -27,8 +27,7 @@ class GetPlayers {
     async getOnePlayer() {
         const player = await Player.findById({_id: this.id});
 
-        // if(player === undefined) return false;
-        console.log(player);
+        if(!player?._id) return false;
         
 
         return {

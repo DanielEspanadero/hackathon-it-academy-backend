@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getOnePlayer = exports.getAllPlayers = void 0;
 const getPlayers_1 = __importDefault(require("../helpers/getPlayers"));
 // TODO Get all players ✅
-// TODO Get one player
+// TODO Get one player ✅
 // TODO Change player name
 const getAllPlayers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -38,19 +38,13 @@ const getOnePlayer = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         const id = req.params.id;
         const player = yield new getPlayers_1.default(id);
         const getPlayer = yield player.getOnePlayer();
-        // if(!getPlayer){
-        //     return res.status(400).json({
-        //         msg: 'Jugador no encontrado'
-        //     })
-        // };
         res.status(201).json({
             getPlayer
         });
     }
     catch (error) {
-        // console.log(error);
-        res.status(500).json({
-            msg: 'Error 500 - Internal Server Error'
+        res.status(400).json({
+            msg: 'Player not found - The ID entered is not valid.'
         });
     }
     ;

@@ -34,8 +34,8 @@ class GetPlayers {
     getOnePlayer() {
         return __awaiter(this, void 0, void 0, function* () {
             const player = yield Player_1.Player.findById({ _id: this.id });
-            // if(player === undefined) return false;
-            console.log(player);
+            if (!(player === null || player === void 0 ? void 0 : player._id))
+                return false;
             return {
                 firstName: player === null || player === void 0 ? void 0 : player.firstName,
                 lastName: player === null || player === void 0 ? void 0 : player.lastName,
