@@ -15,9 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.deletePlayer = exports.updateName = exports.getOnePlayer = exports.getAllPlayers = void 0;
 const getPlayers_1 = __importDefault(require("../helpers/getPlayers"));
 const updatePlayerName_1 = __importDefault(require("../helpers/updatePlayerName"));
-// TODO Get all players ✅
-// TODO Get one player ✅
-// TODO Change player name
 const getAllPlayers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const getAllPlayers = yield getPlayers_1.default.getAllPlayers();
@@ -81,6 +78,10 @@ const deletePlayer = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         });
     }
     catch (error) {
+        res.status(400).json({
+            msg: 'The ID entered is not valid.'
+        });
     }
+    ;
 });
 exports.deletePlayer = deletePlayer;

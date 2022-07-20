@@ -14,8 +14,32 @@ export const playerRollDices = async (req: Request, res: Response) => {
         });
 
     } catch (error) {
+        res.status(400).json({
+            msg: 'The ID entered is not valid.'
+        });
+    };
+};
+
+export const generalRanking = async (req: Request, res: Response) => {
+    try {
+        const ranking = await RollGame.generalRanking();
+
+        res.status(201).json({
+            ranking
+        });
+    } catch (error) {
         res.status(500).json({
-            msg: 'Error 500'
-        })
-    }
+            msg: 'Error 500 - Internal Server Error.'
+        });
+    };
+};
+
+export const getBetterPlayer = (req: Request, res: Response) => {
+    try {
+
+    } catch (error) {
+        res.status(500).json({
+            msg: 'Error 500 - Internal Server Error.'
+        });
+    };
 };

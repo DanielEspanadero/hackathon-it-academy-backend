@@ -41,6 +41,26 @@ class RollGame {
         });
     }
     ;
+    static generalRanking() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const players = yield Player_1.Player.find({}).sort({ wonRate: -1 });
+            return players;
+        });
+    }
+    ;
+    static getBetterPlayer() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const players = yield Player_1.Player.find({});
+            let max = 0;
+            players.forEach(player => player.wonRate > max ? max = player.wonRate : null);
+            const betterPlayer = yield Player_1.Player.findOne({ wonRate: max });
+            return betterPlayer;
+        });
+    }
+    ;
+    getWorstPlayer() {
+    }
+    ;
 }
 ;
 exports.default = RollGame;

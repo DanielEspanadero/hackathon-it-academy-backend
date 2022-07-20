@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.playerRollDices = void 0;
+exports.getBetterPlayer = exports.generalRanking = exports.playerRollDices = void 0;
 const diceGame_1 = __importDefault(require("../helpers/diceGame"));
 const playerRollDices = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -24,9 +24,36 @@ const playerRollDices = (req, res) => __awaiter(void 0, void 0, void 0, function
         });
     }
     catch (error) {
-        res.status(500).json({
-            msg: 'Error 500'
+        res.status(400).json({
+            msg: 'The ID entered is not valid.'
         });
     }
+    ;
 });
 exports.playerRollDices = playerRollDices;
+const generalRanking = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const ranking = yield diceGame_1.default.generalRanking();
+        res.status(201).json({
+            ranking
+        });
+    }
+    catch (error) {
+        res.status(500).json({
+            msg: 'Error 500 - Internal Server Error.'
+        });
+    }
+    ;
+});
+exports.generalRanking = generalRanking;
+const getBetterPlayer = (req, res) => {
+    try {
+    }
+    catch (error) {
+        res.status(500).json({
+            msg: 'Error 500 - Internal Server Error.'
+        });
+    }
+    ;
+};
+exports.getBetterPlayer = getBetterPlayer;

@@ -2,10 +2,6 @@ import { Request, Response } from "express";
 import GetPlayers from "../helpers/getPlayers";
 import UpdatePlayerName from "../helpers/updatePlayerName";
 
-// TODO Get all players ✅
-// TODO Get one player ✅
-// TODO Change player name
-
 export const getAllPlayers = async (req: Request, res: Response) => {
     try {
 
@@ -73,6 +69,8 @@ export const deletePlayer = async (req: Request, res: Response) => {
         })
         
     } catch (error) {
-        
-    }
+        res.status(400).json({
+            msg: 'The ID entered is not valid.'
+        });
+    };
 };

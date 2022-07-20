@@ -15,10 +15,10 @@ class RollGame {
 
         const player = await Player.findById({ _id: this.id }) as IPlayer;
 
-        player.totalGames ++;
+        player.totalGames++;
 
-        if(game.veredict === 'win'){
-            player.gamesWon ++;
+        if (game.veredict === 'win') {
+            player.gamesWon++;
         };
 
         player.playHistory.push(game);
@@ -37,6 +37,26 @@ class RollGame {
             wonRate: player.wonRate,
             playHistory: player.playHistory
         };
+    };
+
+    static async generalRanking() {
+        const players = await Player.find({}).sort({wonRate: -1});
+
+        return players;
+    };
+
+    static async getBetterPlayer() {
+        const players = await Player.find({});
+        let max = 0;
+        players.forEach(player =>
+            player.wonRate > max ? max = player.wonRate : null);
+        const betterPlayer = await Player.findOne({ wonRate: max });
+
+        return betterPlayer;
+    };
+
+    getWorstPlayer() {
+
     };
 };
 
