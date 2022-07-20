@@ -1,6 +1,6 @@
-import { IPlayer } from "../interfaces/IPlayer";
-import { Player } from "../models/Player";
-import { rollDices } from "./dices";
+import { IPlayer } from '../interfaces/IPlayer';
+import { Player } from '../models/Player';
+import { rollDices } from './dices';
 
 class RollGame {
 

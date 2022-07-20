@@ -1,7 +1,7 @@
-import { Player } from "../models/Player";
+import { Player } from '../models/Player';
 import { sign } from 'jsonwebtoken';
 
-import config from "../config";
+import config from '../config';
 
 class Auth {
 

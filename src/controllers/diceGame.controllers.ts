@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import RollGame from "../helpers/diceGame";
+import RollGame from '../helpers/diceGame';
 
 export const playerRollDices = async (req: Request, res: Response) => {
     try {

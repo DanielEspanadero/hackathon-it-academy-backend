@@ -1,5 +1,5 @@
-import { Request, Response } from "express";
-import Auth from "../helpers/auth";
+import { Request, Response } from 'express';
+import Auth from '../helpers/auth';
 
 export const register = async (req: Request, res: Response) => {
     try {

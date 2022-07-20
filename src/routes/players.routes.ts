@@ -1,12 +1,12 @@
-import { Router } from "express";
+import { Router } from 'express';
 
-import { validateToken } from "../middlewares/validateJWT";
+import { validateToken } from '../middlewares/validateJWT';
 import { 
     getAllPlayers, 
     getOnePlayer, 
     updateName, 
     deletePlayer
- } from "../controllers/players.controllers";
+ } from '../controllers/players.controllers';
 
 
 

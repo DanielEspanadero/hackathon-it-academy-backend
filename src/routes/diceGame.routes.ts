@@ -1,12 +1,12 @@
-import { Router } from "express";
+import { Router } from 'express';
 
-import { validateToken } from "../middlewares/validateJWT";
+import { validateToken } from '../middlewares/validateJWT';
 import { playerRollDices,
         generalRanking,
         getBetterPlayer,
         getWorstPlayer,
         deleteGames
- } from "../controllers/diceGame.controllers";
+ } from '../controllers/diceGame.controllers';
 
 const router = Router();
 

@@ -1,5 +1,5 @@
-import { IPlayer } from "../interfaces/IPlayer";
-import { Player } from "../models/Player";
+import { IPlayer } from '../interfaces/IPlayer';
+import { Player } from '../models/Player';
 
 class UpdatePlayerName {
     private id: string;

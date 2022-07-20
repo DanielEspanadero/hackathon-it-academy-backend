@@ -1,6 +1,6 @@
-import { Request, Response } from "express";
-import GetPlayers from "../helpers/getPlayers";
-import UpdatePlayerName from "../helpers/updatePlayerName";
+import { Request, Response } from 'express';
+import GetPlayers from '../helpers/getPlayers';
+import UpdatePlayerName from '../helpers/updatePlayerName';
 
 export const getAllPlayers = async (req: Request, res: Response) => {
     try {

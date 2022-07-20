@@ -1,8 +1,8 @@
-import { Schema, model, Model } from "mongoose";
+import { Schema, model, Model } from 'mongoose';
 import bcryptjs from 'bcryptjs';
 
-import { IPlayer } from "../interfaces/IPlayer";
-import { PlayerModel } from "../interfaces/IPlayerMethods";
+import { IPlayer } from '../interfaces/IPlayer';
+import { PlayerModel } from '../interfaces/IPlayerMethods';
 
 const PlayerSchema = new Schema({
     firstName: {

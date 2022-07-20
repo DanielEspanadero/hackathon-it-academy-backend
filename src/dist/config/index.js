@@ -7,7 +7,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const envFound = dotenv_1.default.config();
 if (envFound.error) {
     // This error should crash whole process
-    throw new Error("⚠️  Couldn't find .env file  ⚠️");
+    throw new Error(`⚠️  Couldn't find .env file  ⚠️`);
 }
 ;
 exports.default = {
