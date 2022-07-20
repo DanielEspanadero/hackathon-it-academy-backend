@@ -28,7 +28,16 @@ class RollGame {
             player.playHistory.push(game);
             player.wonRate = parseFloat(((player.gamesWon / player.totalGames) * 100).toFixed(2));
             yield player.save();
-            return player;
+            return {
+                id: player._id,
+                firstName: player.firstName,
+                lastName: player.lastName,
+                email: player.email,
+                totalGames: player.totalGames,
+                gamesWon: player.gamesWon,
+                wonRate: player.wonRate,
+                playHistory: player.playHistory
+            };
         });
     }
     ;
