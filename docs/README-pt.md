@@ -16,7 +16,7 @@ _Este arquivo README também está disponível em outros idiomas:_
 - [Francês](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-fr.md)
 - [Alemão](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-de.md)
 - [Italiano](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-it.md)
-- [Português](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-pt.md)
+- [Espanhol](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/README.md)
 - [Inglês](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-en.md)
 - [Sueco](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-se.md)
 

@@ -18,7 +18,7 @@ _Denna README-fil är även tillgänglig på andra språk:_
 - [italienska](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-it.md)
 - [Portugisiska](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-pt.md)
 - [engelska](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-en.md)
-- [svenska](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-se.md)
+- [spanska](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/README.md)
 
 
 ## Mål 🎯

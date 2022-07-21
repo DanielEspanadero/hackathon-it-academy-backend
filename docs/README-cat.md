@@ -12,7 +12,7 @@ _Per complir amb tots els requisits (I algun extra) vaig decidir remasteritzar u
 ## Traduccions 💬
 
 _Aquest fitxer README també està disponible en altres idiomes:_
-- [Català](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-cat.md)
+- [Espanyol](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/README.md)
 - [Francès](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-fr.md)
 - [Alemany](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-de.md)
 - [Italià](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-it.md)

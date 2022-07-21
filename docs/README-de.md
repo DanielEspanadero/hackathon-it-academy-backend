@@ -14,7 +14,7 @@ _Um alle Anforderungen (und einige zusätzliche) zu erfüllen, habe ich mich ent
 _Diese README-Datei ist auch in anderen Sprachen verfügbar:_
 - [Katalanisch](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-cat.md)
 - [Französisch](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-fr.md)
-- [Deutsch](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-de.md)
+- [Spanisch](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/README.md)
 - [Italienisch](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-it.md)
 - [Portugiesisch](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-pt.md)
 - [Englisch](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-en.md)
