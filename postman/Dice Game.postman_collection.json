@@ -70,7 +70,7 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "Authorization",
+						"key": "authorization",
 						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDg3NGI5ZDFiYjY2ZTc5YTllMjNkOSIsImlhdCI6MTY1ODM1NjUwNiwiZXhwIjoxNjU4MzcwOTA2fQ.FMPdxNpkawWBQbGnvt6KahibB3i3XE4oSDi2tYYY4QQ",
 						"type": "text"
 					}
@@ -96,7 +96,7 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "Authorization",
+						"key": "authorization",
 						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDg3NGI5ZDFiYjY2ZTc5YTllMjNkOSIsImlhdCI6MTY1ODM1NjUwNiwiZXhwIjoxNjU4MzcwOTA2fQ.FMPdxNpkawWBQbGnvt6KahibB3i3XE4oSDi2tYYY4QQ",
 						"type": "text"
 					}
@@ -123,7 +123,7 @@
 				"method": "PUT",
 				"header": [
 					{
-						"key": "Authorization",
+						"key": "authorization",
 						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDg3NGI5ZDFiYjY2ZTc5YTllMjNkOSIsImlhdCI6MTY1ODM1NjUwNiwiZXhwIjoxNjU4MzcwOTA2fQ.FMPdxNpkawWBQbGnvt6KahibB3i3XE4oSDi2tYYY4QQ",
 						"type": "text"
 					}
@@ -159,7 +159,7 @@
 				"method": "DELETE",
 				"header": [
 					{
-						"key": "Authorization",
+						"key": "authorization",
 						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDg3NGI5ZDFiYjY2ZTc5YTllMjNkOSIsImlhdCI6MTY1ODM1NjUwNiwiZXhwIjoxNjU4MzcwOTA2fQ.FMPdxNpkawWBQbGnvt6KahibB3i3XE4oSDi2tYYY4QQ",
 						"type": "text"
 					}
@@ -213,7 +213,7 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "Authorization",
+						"key": "authorization",
 						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDg3NGI5ZDFiYjY2ZTc5YTllMjNkOSIsImlhdCI6MTY1ODM1NjE1OCwiZXhwIjoxNjU4MzcwNTU4fQ.ur22iTGHoMRVQEpF1_hbN93r1ib2qQGiN_SY5Zx3e8c",
 						"type": "text"
 					}
@@ -239,7 +239,7 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "Authorization",
+						"key": "authorization",
 						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDg3NGI5ZDFiYjY2ZTc5YTllMjNkOSIsImlhdCI6MTY1ODM1NjUwNiwiZXhwIjoxNjU4MzcwOTA2fQ.FMPdxNpkawWBQbGnvt6KahibB3i3XE4oSDi2tYYY4QQ",
 						"type": "text"
 					}
@@ -265,7 +265,7 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "Authorization",
+						"key": "authorization",
 						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDg3NGI5ZDFiYjY2ZTc5YTllMjNkOSIsImlhdCI6MTY1ODM1NjUwNiwiZXhwIjoxNjU4MzcwOTA2fQ.FMPdxNpkawWBQbGnvt6KahibB3i3XE4oSDi2tYYY4QQ",
 						"type": "text"
 					}
@@ -286,7 +286,7 @@
 			"response": []
 		},
 		{
-			"name": "Delete Player",
+			"name": "Delete Game",
 			"request": {
 				"method": "DELETE",
 				"header": [
