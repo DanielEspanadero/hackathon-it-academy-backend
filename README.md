@@ -9,6 +9,18 @@ _Aplicación creada para la clasificación de la hackathon de [IT Academy](https
 _Para cumplir con todos los requisitos (Y alguno extra) decidí remasterizar una de las primeras APIs que hice, la cual consiste en un 🎲 juego de dados 🎲 utilizando conceptos mucho más avanzados que en aquel entonces como por ejemplo la aplicación de los principios SOLID o capas de abstracción en las diferentes funcionalidades de la aplicación._
 
 
+## Traducciones 💬
+
+_Este archivo README también está disponible en otros idiomas:_
+- [Catalán]()
+- [Francés]()
+- [Alemán]()
+- [Italiano]()
+- [Portugués]()
+- [Inglés]()
+- [Sueco]()
+
+
 ## Objetivos 🎯
 
 _Para conseguir un puesto en la final nos piden cumplir los siguientes objetivos:_
