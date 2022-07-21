@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const config_1 = __importDefault(require("../config"));
+const cors_1 = __importDefault(require("cors"));
 const connect_1 = require("../db/connect");
 // Import of routes
 const auth_routes_1 = __importDefault(require("../routes/auth.routes"));
@@ -41,6 +42,12 @@ class Server {
     }
     middlewares() {
         this.app.use(express_1.default.json());
+        this.app.use((0, cors_1.default)({
+            "origin": "*",
+            "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+            "preflightContinue": false,
+            "optionsSuccessStatus": 204
+        }));
     }
     routes() {
         this.app.use(this.path.auth, auth_routes_1.default);

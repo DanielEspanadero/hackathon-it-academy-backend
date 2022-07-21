@@ -1,5 +1,6 @@
 import express, { Application } from 'express';
 import config from '../config';
+import cors from 'cors';
 
 import { connectDB } from '../db/connect';
 
@@ -35,6 +36,12 @@ class Server {
 
     middlewares(){
         this.app.use(express.json());
+        this.app.use(cors({
+            "origin": "*",
+            "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+            "preflightContinue": false,
+            "optionsSuccessStatus": 204
+        }));
     }
 
     routes() {
