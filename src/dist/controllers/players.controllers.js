@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.deletePlayer = exports.updateName = exports.getOnePlayer = exports.getAllPlayers = void 0;
 const getPlayers_1 = __importDefault(require("../helpers/getPlayers"));
 const updatePlayerName_1 = __importDefault(require("../helpers/updatePlayerName"));
+// Controller that allows us to get all the players.
 const getAllPlayers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const getAllPlayers = yield getPlayers_1.default.getAllPlayers();
@@ -31,6 +32,7 @@ const getAllPlayers = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     ;
 });
 exports.getAllPlayers = getAllPlayers;
+// Controller that allows us to obtain a player through his ID.
 const getOnePlayer = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const id = req.params.id;
@@ -48,6 +50,7 @@ const getOnePlayer = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     ;
 });
 exports.getOnePlayer = getOnePlayer;
+// Controller that allows us to modify the first and last name of a player through their ID.
 const updateName = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const id = req.params.id;
@@ -67,6 +70,7 @@ const updateName = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     ;
 });
 exports.updateName = updateName;
+// Controller that allows us to delete a player.
 const deletePlayer = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const id = req.params.id;

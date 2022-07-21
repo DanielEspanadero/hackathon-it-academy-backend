@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateToken = void 0;
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const config_1 = __importDefault(require("../config"));
+// Json Web Token middleware to protect routes.
 const validateToken = (req, res, next) => {
     try {
         const accesToken = req.header('authorization') || req.query.accesstoken;

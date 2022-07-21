@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Player_1 = require("../models/Player");
 const jsonwebtoken_1 = require("jsonwebtoken");
 const config_1 = __importDefault(require("../config"));
+// Logic necessary for user authentication (Includes login and register).
 class Auth {
     constructor(email, password, firstName, lastName, date) {
         this.firstName = firstName;

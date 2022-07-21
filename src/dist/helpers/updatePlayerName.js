@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Player_1 = require("../models/Player");
+// Logic to update players.
 class UpdatePlayerName {
     constructor(id, firstName, lastName) {
         this.firstName = firstName;

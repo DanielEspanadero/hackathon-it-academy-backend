@@ -3,6 +3,7 @@ import { sign } from 'jsonwebtoken';
 
 import config from '../config';
 
+// Logic necessary for user authentication (Includes login and register).
 class Auth {
 
     private firstName: string | undefined;

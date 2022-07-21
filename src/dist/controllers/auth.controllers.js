@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.login = exports.register = void 0;
 const auth_1 = __importDefault(require("../helpers/auth"));
+// Controller that allows us to register the user.
 const register = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { firstName, lastName, email, password } = req.body;
@@ -37,6 +38,7 @@ const register = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     ;
 });
 exports.register = register;
+// Controller that allows us to login the user.
 const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { email, password } = req.body;

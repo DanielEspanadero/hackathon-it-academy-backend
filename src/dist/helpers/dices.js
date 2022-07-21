@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.rollDices = void 0;
+// Dice game logic.
 const rollDices = () => {
     const dice_1 = Math.floor(6 * Math.random()) + 1;
     const dice_2 = Math.floor(6 * Math.random()) + 1;

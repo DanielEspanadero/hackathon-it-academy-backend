@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteGames = exports.getWorstPlayer = exports.getBetterPlayer = exports.generalRanking = exports.playerRollDices = void 0;
 const diceGame_1 = __importDefault(require("../helpers/diceGame"));
+// Controller that allows us to manage when a player rolls.
 const playerRollDices = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const id = req.params.id;
@@ -31,6 +32,7 @@ const playerRollDices = (req, res) => __awaiter(void 0, void 0, void 0, function
     ;
 });
 exports.playerRollDices = playerRollDices;
+// Controller that allows us to obtain a ranking of all the players.
 const generalRanking = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const ranking = yield diceGame_1.default.generalRanking();
@@ -46,6 +48,7 @@ const generalRanking = (req, res) => __awaiter(void 0, void 0, void 0, function*
     ;
 });
 exports.generalRanking = generalRanking;
+// Controller that allows us to get the best player.
 const getBetterPlayer = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const betterPlayer = yield diceGame_1.default.getBetterPlayer();
@@ -61,6 +64,7 @@ const getBetterPlayer = (req, res) => __awaiter(void 0, void 0, void 0, function
     ;
 });
 exports.getBetterPlayer = getBetterPlayer;
+// Controller that allows us to get the worst player.
 const getWorstPlayer = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const worstPlayer = yield diceGame_1.default.getWorstPlayer();
@@ -76,6 +80,7 @@ const getWorstPlayer = (req, res) => __awaiter(void 0, void 0, void 0, function*
     ;
 });
 exports.getWorstPlayer = getWorstPlayer;
+// Controller that allows us to delete all the moves of a player.
 const deleteGames = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const id = req.params.id;

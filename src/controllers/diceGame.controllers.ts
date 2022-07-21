@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import RollGame from '../helpers/diceGame';
 
+// Controller that allows us to manage when a player rolls.
 export const playerRollDices = async (req: Request, res: Response) => {
     try {
         const id = req.params.id;
@@ -20,6 +21,7 @@ export const playerRollDices = async (req: Request, res: Response) => {
     };
 };
 
+// Controller that allows us to obtain a ranking of all the players.
 export const generalRanking = async (req: Request, res: Response) => {
     try {
         const ranking = await RollGame.generalRanking();
@@ -34,6 +36,7 @@ export const generalRanking = async (req: Request, res: Response) => {
     };
 };
 
+// Controller that allows us to get the best player.
 export const getBetterPlayer = async (req: Request, res: Response) => {
     try {
         const betterPlayer = await RollGame.getBetterPlayer();
@@ -48,6 +51,7 @@ export const getBetterPlayer = async (req: Request, res: Response) => {
     };
 };
 
+// Controller that allows us to get the worst player.
 export const getWorstPlayer = async (req: Request, res: Response) => {
     try {
         const worstPlayer = await RollGame.getWorstPlayer();
@@ -62,6 +66,7 @@ export const getWorstPlayer = async (req: Request, res: Response) => {
     };
 };
 
+// Controller that allows us to delete all the moves of a player.
 export const deleteGames = async (req: Request, res: Response) => {
     try {
         const id = req.params.id;

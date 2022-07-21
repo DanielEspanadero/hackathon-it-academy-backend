@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.error404 = void 0;
+// Controller that returns a json with the 404 error.
 const error404 = (req, res) => {
     try {
         res.status(404).json({

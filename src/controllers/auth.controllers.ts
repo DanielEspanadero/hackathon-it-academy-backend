@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import Auth from '../helpers/auth';
 
+// Controller that allows us to register the user.
 export const register = async (req: Request, res: Response) => {
     try {
         const { firstName, lastName, email, password } = req.body;
@@ -22,6 +23,7 @@ export const register = async (req: Request, res: Response) => {
     };
 };
 
+// Controller that allows us to login the user.
 export const login = async (req: Request, res: Response) => {
     try {
         const { email, password } = req.body;

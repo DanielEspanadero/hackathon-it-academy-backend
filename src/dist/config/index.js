@@ -10,6 +10,7 @@ if (envFound.error) {
     throw new Error(`⚠️  Couldn't find .env file  ⚠️`);
 }
 ;
+// Environment variable exports.
 exports.default = {
     port: process.env.PORT || 3000,
     databaseURL: process.env.MONGODB_URI,

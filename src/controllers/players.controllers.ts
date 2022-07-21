@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import GetPlayers from '../helpers/getPlayers';
 import UpdatePlayerName from '../helpers/updatePlayerName';
 
+// Controller that allows us to get all the players.
 export const getAllPlayers = async (req: Request, res: Response) => {
     try {
 
@@ -19,6 +20,7 @@ export const getAllPlayers = async (req: Request, res: Response) => {
     };
 };
 
+// Controller that allows us to obtain a player through his ID.
 export const getOnePlayer = async (req: Request, res: Response) => {
     try {
         const id = req.params.id;
@@ -35,6 +37,7 @@ export const getOnePlayer = async (req: Request, res: Response) => {
     };
 };
 
+// Controller that allows us to modify the first and last name of a player through their ID.
 export const updateName = async (req: Request, res: Response) => {
     try {
         const id = req.params.id;
@@ -55,6 +58,7 @@ export const updateName = async (req: Request, res: Response) => {
     };
 };
 
+// Controller that allows us to delete a player.
 export const deletePlayer = async (req: Request, res: Response) => {
     try {
         const id = req.params.id;

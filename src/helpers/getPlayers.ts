@@ -1,5 +1,7 @@
 import { Player } from '../models/Player';
 
+
+// Logic to obtain and manipulate players.
 class GetPlayers {
 
     private id: string;

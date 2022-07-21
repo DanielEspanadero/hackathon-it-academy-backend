@@ -2,6 +2,7 @@ import { IPlayer } from '../interfaces/IPlayer';
 import { Player } from '../models/Player';
 import { rollDices } from './dices';
 
+// Logic to interact with the dice game.
 class RollGame {
 
     private id: string;

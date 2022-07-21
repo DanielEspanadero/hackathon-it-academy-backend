@@ -3,6 +3,7 @@ import { error404 } from '../controllers/error404.controllers';
 
 const router = Router();
 
+// Routes to display the 404 error.
 router.get('*', error404);
 router.post('*', error404);
 router.put('*', error404);

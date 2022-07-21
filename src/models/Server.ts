@@ -10,6 +10,7 @@ import routerPlayers from '../routes/players.routes';
 import routerGames from '../routes/diceGame.routes';
 import routerError404 from '../routes/error404.routes';
 
+// Express server based on classes, it allows to organize and scale the code in a simple way.
 class Server {
 
     private app: Application;

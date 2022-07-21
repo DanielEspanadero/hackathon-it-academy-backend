@@ -1,6 +1,7 @@
 import { IPlayer } from '../interfaces/IPlayer';
 import { Player } from '../models/Player';
 
+// Logic to update players.
 class UpdatePlayerName {
     private id: string;
     private firstName: string;

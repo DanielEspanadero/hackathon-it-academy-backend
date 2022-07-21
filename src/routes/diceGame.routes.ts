@@ -10,6 +10,7 @@ import { playerRollDices,
 
 const router = Router();
 
+// Routes related to the operation of the game.
 router.post('/player/:id', validateToken, playerRollDices);
 router.get('/ranking', validateToken, generalRanking);
 router.get('/better-player', validateToken, getBetterPlayer);

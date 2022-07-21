@@ -1,5 +1,6 @@
+
+// Dice game logic.
 export const rollDices = () => {
-    
     const dice_1 = Math.floor(6 * Math.random()) + 1;
     const dice_2 = Math.floor(6 * Math.random()) + 1;
     const veredict = dice_1 + dice_2 === 7 ? 'win' : 'lose';

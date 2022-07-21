@@ -1,3 +1,5 @@
+// Player model interface.
+
 export interface IPlayer {
     _id: string,
     firstName: string,

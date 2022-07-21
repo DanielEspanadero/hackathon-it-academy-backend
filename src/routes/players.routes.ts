@@ -12,6 +12,7 @@ import {
 
 const router = Router();
 
+// Routes related to player manipulation.
 router.get('/get-all-players', validateToken, getAllPlayers);
 router.get('/get-player/:id', validateToken, getOnePlayer);
 router.put('/update-player/:id', validateToken, updateName);

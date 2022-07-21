@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.connectDB = void 0;
 const mongoose_1 = require("mongoose");
 const config_1 = __importDefault(require("../config"));
+// MongoDB database configuration.
 const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield (0, mongoose_1.connect)(config_1.default.databaseURL);

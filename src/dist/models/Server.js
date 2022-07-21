@@ -21,6 +21,7 @@ const auth_routes_1 = __importDefault(require("../routes/auth.routes"));
 const players_routes_1 = __importDefault(require("../routes/players.routes"));
 const diceGame_routes_1 = __importDefault(require("../routes/diceGame.routes"));
 const error404_routes_1 = __importDefault(require("../routes/error404.routes"));
+// Express server based on classes, it allows to organize and scale the code in a simple way.
 class Server {
     constructor() {
         this.path = {

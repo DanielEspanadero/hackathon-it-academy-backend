@@ -4,6 +4,7 @@ import bcryptjs from 'bcryptjs';
 import { IPlayer } from '../interfaces/IPlayer';
 import { PlayerModel } from '../interfaces/IPlayerMethods';
 
+// User model.
 const PlayerSchema = new Schema({
     firstName: {
         type: String,

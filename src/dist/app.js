@@ -1,4 +1,5 @@
 "use strict";
+// This file is the beginning of the project, to which we import the model of the server made in express based on classes.
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };

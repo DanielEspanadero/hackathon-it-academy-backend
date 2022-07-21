@@ -1,5 +1,6 @@
 import { Request, Response } from 'express'
 
+// Controller that returns a json with the 404 error.
 export const error404 = (req: Request, res: Response) => {
     try {
         res.status(404).json({
