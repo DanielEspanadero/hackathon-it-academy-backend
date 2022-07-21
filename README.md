@@ -4,9 +4,9 @@
 
 _Este proyecto ha sido desarrollado desde cero por [Daniel Españadero](https://github.com/DanielEspanadero)._
 
-_Aplicación creada para la clasificación de la hackathon de [IT Academy](https://cibernarium.barcelonactiva.cat/it-academy/inscripcio;jsessionid=14F45E43AC8E410DB388C1096FD21201) - Backend organizada por [Nuwe](https://nuwe.io/)_
+_Aplicación creada para la clasificación de la hackathon de [IT Academy](https://cibernarium.barcelonactiva.cat/it-academy/inscripcio;jsessionid=14F45E43AC8E410DB388C1096FD21201) - Backend organizada por [Nuwe](https://nuwe.io/)._
 
-_Para cumplir con todos los requisitos (Y alguno extra) decidí remasterizar una de las primeras APIs que hice, la cual consiste en un 🎲 juego de dados 🎲 utilizando conceptos mucho más avanzados que en aquel entonces como por ejemplo la aplicación de los principios SOLID o capas de abstracción en las diferentes funcionalidades de la aplicación_
+_Para cumplir con todos los requisitos (Y alguno extra) decidí remasterizar una de las primeras APIs que hice, la cual consiste en un 🎲 juego de dados 🎲 utilizando conceptos mucho más avanzados que en aquel entonces como por ejemplo la aplicación de los principios SOLID o capas de abstracción en las diferentes funcionalidades de la aplicación._
 
 
 ## Objetivos 🎯
@@ -40,6 +40,7 @@ _Estas instrucciones le permitirán obtener una copia de trabajo del proyecto en
 _Para que el proyecto funcione correctamente, se recomienda tener una serie de programas instalados y configurados adecuadamente:_
 - [Visual Studio Code](https://code.visualstudio.com/download)
 - [Node.js y npm](https://nodejs.org/es/)
+- [Postman](https://www.postman.com/)
 
 
 ### Instalación 🔧
@@ -52,7 +53,7 @@ npm install
 
 ### Variables de entorno .env 🪛
 
-_Para que el proyecto funcione correctamente tienes que habilitar las variables de entorno, para ello tienes que crear un archivo con el nombre `.env` e introducir los datos que tienes en la plantilla `.config.env`_
+_Para que el proyecto funcione correctamente tienes que habilitar las variables de entorno, para ello tienes que crear un archivo con el nombre `.env` e introducir los datos que tienes en la plantilla `.config.env`._
 
 ![Demo](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/01.png)
 
@@ -62,7 +63,7 @@ _Una vez que todos los programas y dependencias necesarios estén instalados, si
 ```
 npm init
 ```
-_O también puede ingresar el comando para la versión de desarrollo._
+_O también puede ingresar el comando para la versión de desarrollo:_
 ```
 npm run dev
 ```
@@ -79,7 +80,7 @@ _Aquí puedes ver la estructura que estoy utilizando para el proyecto:_
 
 ### Arquitectura de 3 capas 🥪
 
-_La idea es utilizar el **principio de responsabilidad unica**_
+_La idea es utilizar el **principio de responsabilidad unica**._
 
 _Trabajo mucho para intentar separar la lógica de negocio de los controladores ya que de no separarlo se convertirá rápidamente en código spaguetti._
 
@@ -94,7 +95,7 @@ _En la carpeta config tengo centralizado todas las variables de entorno y config
 
 ## Funcionamiento de la app 🛠
 
-_La idea de este proyecto es un juego de dados con varias funcionalidades como:_
+_🎲 La idea de este proyecto es un juego de dados con varias funcionalidades como:_
 
  - Registro de usuarios.
  - Login.
