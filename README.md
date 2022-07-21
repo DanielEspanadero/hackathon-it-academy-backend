@@ -4,7 +4,7 @@
 
 _Este proyecto ha sido desarrollado desde cero por [Daniel Españadero](https://github.com/DanielEspanadero)._
 
-_Aplicación creada para la clasificación de la hackathon de [IT Academy](https://cibernarium.barcelonactiva.cat/it-academy/inscripcio;jsessionid=14F45E43AC8E410DB388C1096FD21201) - Backend organizada por [Nuwe](https://nuwe.io/)._
+_Aplicación creada para la clasificación de la hackathon de [IT Academy](https://cibernarium.barcelonactiva.cat/it-academy/inscripcio) - Backend organizada por [Nuwe](https://nuwe.io)._
 
 _Para cumplir con todos los requisitos (Y alguno extra) decidí remasterizar una de las primeras APIs que hice, la cual consiste en un 🎲 juego de dados 🎲 utilizando conceptos mucho más avanzados que en aquel entonces como por ejemplo la aplicación de los principios SOLID o capas de abstracción en las diferentes funcionalidades de la aplicación._
 
@@ -12,13 +12,13 @@ _Para cumplir con todos los requisitos (Y alguno extra) decidí remasterizar una
 ## Traducciones 💬
 
 _Este archivo README también está disponible en otros idiomas:_
-- [Catalán]()
-- [Francés]()
-- [Alemán]()
-- [Italiano]()
-- [Portugués]()
-- [Inglés]()
-- [Sueco]()
+- [Catalán](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-cat.md)
+- [Francés](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-fr.md)
+- [Alemán](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-de.md)
+- [Italiano](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-it.md)
+- [Portugués](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-pt.md)
+- [Inglés](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-en.md)
+- [Sueco](https://github.com/DanielEspanadero/hackathon-it-academy-backend/blob/main/docs/README-se.md)
 
 
 ## Objetivos 🎯
